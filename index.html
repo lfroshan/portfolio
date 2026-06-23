@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roshan Shrestha — Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Roshan Shrestha — Senior Software Engineer specializing in backend engineering, Microsoft Power Platform, and US Healthcare integrations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0e1b2b;
+        --ink-soft: #16263a;
+        --surface: #1b2c42;
+        --paper: #f5f3ee;
+        --paper-dim: #e7e3d9;
+        --copper: #d98e45;
+        --copper-soft: #e8b27c;
+        --slate: #5c6b80;
+        --muted: #8a93a0;
+        --line: rgba(245, 243, 238, 0.12);
+
+        --font-display: "Fraunces", serif;
+        --font-body: "Inter", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+
+        --maxw: 1100px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      body {
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--font-body);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ::selection {
+        background: var(--copper);
+        color: var(--ink);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--copper);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+
+      /* ---------- layout shell ---------- */
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+        position: relative;
+      }
+
+      section {
+        position: relative;
+        padding: 120px 0 0;
+      }
+      section:first-of-type {
+        padding-top: 0;
+      }
+      section:last-of-type {
+        padding-bottom: 140px;
+      }
+
+      /* trace line signature element */
+      .trace-rail {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: var(--line);
+        z-index: 0;
+      }
+      .trace-rail::after {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 0;
+        width: 6px;
+        height: 90px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--copper) 50%,
+          transparent
+        );
+        opacity: 0;
+        filter: blur(1px);
+        animation: pulse-travel 7s ease-in-out infinite;
+      }
+      @keyframes pulse-travel {
+        0% {
+          top: -90px;
+          opacity: 0;
+        }
+        8% {
+          opacity: 0.9;
+        }
+        45% {
+          opacity: 0.9;
+        }
+        55% {
+          opacity: 0;
+        }
+        100% {
+          top: -90px;
+          opacity: 0;
+        }
+      }
+
+      .node-dot {
+        position: absolute;
+        left: -5px;
+        top: 6px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--ink);
+        border: 2px solid var(--copper);
+        z-index: 2;
+      }
+
+      .section-inner {
+        padding-left: 36px;
+      }
+
+      /* ---------- nav ---------- */
+      header.site-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: rgba(14, 27, 43, 0.82);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 18px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-mark {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        color: var(--copper-soft);
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .nav-links a {
+        color: var(--muted);
+        transition: color 0.2s ease;
+        position: relative;
+      }
+      .nav-links a:hover {
+        color: var(--paper);
+      }
+      .nav-toggle {
+        display: none;
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 110px;
+        padding-bottom: 80px;
+      }
+
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--copper);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 28px;
+        opacity: 0;
+        animation: rise 0.8s ease 0.1s forwards;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--copper);
+        box-shadow: 0 0 0 4px rgba(217, 142, 69, 0.18);
+      }
+
+      h1.hero-name {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(48px, 8vw, 92px);
+        line-height: 1.02;
+        letter-spacing: -0.01em;
+        color: var(--paper);
+        opacity: 0;
+        animation: rise 0.9s ease 0.25s forwards;
+      }
+      h1.hero-name em {
+        font-style: italic;
+        color: var(--copper-soft);
+        font-weight: 500;
+      }
+
+      .hero-role {
+        font-family: var(--font-body);
+        font-weight: 500;
+        font-size: clamp(18px, 2.4vw, 24px);
+        color: var(--slate);
+        margin-top: 18px;
+        max-width: 620px;
+        opacity: 0;
+        animation: rise 0.9s ease 0.4s forwards;
+      }
+      .hero-role strong {
+        color: var(--paper);
+        font-weight: 600;
+      }
+
+      .hero-desc {
+        margin-top: 24px;
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 16px;
+        opacity: 0;
+        animation: rise 0.9s ease 0.55s forwards;
+      }
+
+      .hero-actions {
+        margin-top: 40px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: rise 0.9s ease 0.7s forwards;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .btn {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 0.03em;
+        padding: 14px 26px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .btn-primary {
+        background: var(--copper);
+        color: var(--ink);
+      }
+      .btn-primary:hover {
+        background: var(--copper-soft);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--paper);
+      }
+      .btn-ghost:hover {
+        border-color: var(--copper);
+        color: var(--copper-soft);
+        transform: translateY(-2px);
+      }
+
+      .hero-meta {
+        margin-top: 64px;
+        display: flex;
+        gap: 48px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: rise 0.9s ease 0.85s forwards;
+      }
+      .meta-item {
+        font-family: var(--font-mono);
+      }
+      .meta-num {
+        font-family: var(--font-display);
+        font-size: 34px;
+        color: var(--paper);
+        font-weight: 500;
+      }
+      .meta-label {
+        font-size: 11.5px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 4px;
+      }
+
+      /* ---------- section headings ---------- */
+      .section-tag {
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--copper);
+        margin-bottom: 14px;
+      }
+      h2.section-title {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(30px, 4vw, 42px);
+        color: var(--paper);
+        margin-bottom: 48px;
+        max-width: 640px;
+      }
+
+      /* ---------- about ---------- */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 60px;
+        align-items: start;
+        padding-bottom: 60px;
+      }
+      .about-text p {
+        color: var(--paper-dim);
+        font-size: 16.5px;
+        margin-bottom: 18px;
+        max-width: 560px;
+      }
+      .about-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stack-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 28px;
+      }
+      .stack-group {
+        margin-bottom: 22px;
+      }
+      .stack-group:last-child {
+        margin-bottom: 0;
+      }
+      .stack-group-label {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pill {
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        color: var(--paper-dim);
+        background: rgba(245, 243, 238, 0.03);
+      }
+      .pill.accent {
+        border-color: rgba(217, 142, 69, 0.4);
+        color: var(--copper-soft);
+      }
+
+      /* ---------- experience ---------- */
+      .job {
+        border-top: 1px solid var(--line);
+        padding: 36px 0;
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        gap: 36px;
+      }
+      .job:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .job-period {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .job-period .current-dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--copper);
+        margin-right: 6px;
+        box-shadow: 0 0 0 3px rgba(217, 142, 69, 0.2);
+      }
+
+      .job-title {
+        font-family: var(--font-display);
+        font-size: 23px;
+        font-weight: 500;
+        color: var(--paper);
+      }
+      .job-company {
+        font-size: 14.5px;
+        color: var(--copper-soft);
+        margin-top: 4px;
+        margin-bottom: 18px;
+      }
+      .job-points {
+        list-style: none;
+      }
+      .job-points li {
+        position: relative;
+        padding-left: 20px;
+        color: var(--paper-dim);
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
+      .job-points li:last-child {
+        margin-bottom: 0;
+      }
+      .job-points li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 8px;
+        height: 1.5px;
+        background: var(--copper);
+      }
+      .job-points strong {
+        color: var(--paper);
+        font-weight: 600;
+      }
+
+      .job-empty-points {
+        color: var(--muted);
+        font-size: 14.5px;
+        font-style: italic;
+      }
+
+      /* ---------- projects ---------- */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding-bottom: 60px;
+      }
+      .project-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 30px 26px;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(217, 142, 69, 0.4);
+      }
+      .project-index {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--copper);
+        margin-bottom: 16px;
+      }
+      .project-title {
+        font-family: var(--font-display);
+        font-size: 21px;
+        font-weight: 500;
+        color: var(--paper);
+        margin-bottom: 12px;
+      }
+      .project-desc {
+        color: var(--muted);
+        font-size: 14.5px;
+        flex-grow: 1;
+        margin-bottom: 18px;
+      }
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tag {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        color: var(--slate);
+        padding: 4px 9px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+
+      /* ---------- education + extracurricular ---------- */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+      .edu-item {
+        margin-bottom: 28px;
+      }
+      .edu-item:last-child {
+        margin-bottom: 0;
+      }
+      .edu-degree {
+        font-family: var(--font-display);
+        font-size: 19px;
+        color: var(--paper);
+        font-weight: 500;
+      }
+      .edu-school {
+        font-size: 14.5px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .edu-date {
+        font-family: var(--font-mono);
+        font-size: 12.5px;
+        color: var(--copper-soft);
+        margin-top: 6px;
+      }
+
+      .activity-item {
+        border-top: 1px solid var(--line);
+        padding: 18px 0;
+      }
+      .activity-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+      .activity-title {
+        font-weight: 600;
+        color: var(--paper);
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+      .activity-desc {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ---------- contact / footer ---------- */
+      .contact-panel {
+        background: linear-gradient(135deg, var(--surface), var(--ink-soft));
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 56px;
+        text-align: left;
+      }
+      .contact-panel h2 {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 500;
+        color: var(--paper);
+        margin-bottom: 16px;
+        max-width: 520px;
+      }
+      .contact-panel p {
+        color: var(--muted);
+        max-width: 480px;
+        margin-bottom: 32px;
+      }
+      .contact-links {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      footer {
+        margin-top: 90px;
+        padding: 28px 0 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--line);
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* ---------- reveal on scroll ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 880px) {
+        .about-grid,
+        .two-col {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .project-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 18px;
+        }
+        .job {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .contact-panel {
+          padding: 40px 28px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .wrap {
+          padding: 0 20px;
+        }
+        section {
+          padding-top: 90px;
+        }
+        .section-inner {
+          padding-left: 26px;
+        }
+        .nav-links {
+          position: fixed;
+          top: 64px;
+          left: 0;
+          right: 0;
+          background: var(--ink);
+          flex-direction: column;
+          gap: 0;
+          padding: 8px 20px 20px;
+          border-bottom: 1px solid var(--line);
+          transform: translateY(-110%);
+          transition: transform 0.3s ease;
+          z-index: 60;
+        }
+        .nav-links.open {
+          transform: translateY(0);
+        }
+        .nav-links a {
+          padding: 14px 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .nav-toggle {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 6px;
+          position: relative;
+          z-index: 61;
+        }
+        .nav-toggle span {
+          width: 22px;
+          height: 1.5px;
+          background: var(--paper);
+          transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+        }
+        .nav-toggle.open span:nth-child(1) {
+          transform: translateY(6.5px) rotate(45deg);
+        }
+        .nav-toggle.open span:nth-child(2) {
+          opacity: 0;
+        }
+        .nav-toggle.open span:nth-child(3) {
+          transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        .hero-meta {
+          gap: 32px;
+        }
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-actions {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .contact-links {
+          flex-direction: column;
+        }
+        .contact-links .btn {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 420px) {
+        h1.hero-name {
+          font-size: clamp(38px, 11vw, 56px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="nav-inner">
+        <a href="#top" class="nav-mark">R. SHRESTHA</a>
+        <nav class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div id="top"></div>
+
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="eyebrow">Senior Software Engineer · Kathmandu, Nepal</div>
+      <h1 class="hero-name">Roshan<br /><em>Shrestha</em></h1>
+      <p class="hero-role">
+        Backend engineer building <strong>scalable systems</strong> at the
+        intersection of <strong>Node.js / GraphQL</strong> and the
+        <strong>Microsoft Power Platform</strong>.
+      </p>
+      <p class="hero-desc">
+        4+ years architecting APIs, automations, and integrations — with a
+        specialty in US healthcare data exchange (HL7, X12, state immunization
+        systems) that has touched the records of over a million patients.
+      </p>
+      <div class="hero-actions">
+        <a href="#experience" class="btn btn-primary">View experience →</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <div class="meta-num">4+</div>
+          <div class="meta-label">Years experience</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-num">1M+</div>
+          <div class="meta-label">Patients reached</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="wrap">
+      <div class="trace-rail"></div>
+      <div class="node-dot"></div>
+      <div class="section-inner">
+        <div class="section-tag">01 / About</div>
+        <h2 class="section-title">
+          Full-stack at the core, Power Platform by specialty.
+        </h2>
+        <div class="about-grid reveal">
+          <div class="about-text">
+            <p>
+              I'm a Senior Software Engineer at Leapfrog Technology, where I've
+              spent four years moving from associate to senior — designing REST
+              and GraphQL APIs in Node.js, building React and PCF components,
+              and architecting Microsoft Power Platform solutions end to end.
+            </p>
+            <p>
+              My specialty sits where these worlds meet: Canvas Apps and
+              Model-Driven Apps talking to Azure Service Bus, custom connectors
+              syncing with Dataverse, and Publisher–Subscriber patterns that
+              keep large healthcare systems reliable under load.
+            </p>
+            <p>
+              A good chunk of that work lives in US healthcare integration —
+              connecting state immunization systems like WAIIS and NJIIS, and
+              handling X12 billing transactions (277, 835) where correctness
+              isn't optional.
+            </p>
+          </div>
+          <div class="stack-panel">
+            <div class="stack-group">
+              <div class="stack-group-label">Languages</div>
+              <div class="pill-row">
+                <span class="pill accent">JavaScript</span>
+                <span class="pill accent">TypeScript</span>
+                <span class="pill">C#</span>
+                <span class="pill">Python</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <div class="stack-group-label">Frameworks</div>
+              <div class="pill-row">
+                <span class="pill">Node.js</span>
+                <span class="pill">React.js</span>
+                <span class="pill">.NET</span>
+                <span class="pill">Power Apps (PCF)</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <div class="stack-group-label">Platform & Cloud</div>
+              <div class="pill-row">
+                <span class="pill accent">Power Platform</span>
+                <span class="pill">Azure</span>
+                <span class="pill">Dataverse</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <div class="stack-group-label">Data & DevOps</div>
+              <div class="pill-row">
+                <span class="pill">MongoDB</span>
+                <span class="pill">PostgreSQL</span>
+                <span class="pill">Docker</span>
+                <span class="pill">Kubernetes</span>
+                <span class="pill">GitHub Actions</span>
+              </div>
+            </div>
+            <div class="stack-group">
+              <div class="stack-group-label">Specialization</div>
+              <div class="pill-row">
+                <span class="pill accent">HL7 / X12</span>
+                <span class="pill accent">Microservices</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="wrap">
+      <div class="trace-rail"></div>
+      <div class="node-dot"></div>
+      <div class="section-inner">
+        <div class="section-tag">02 / Experience</div>
+        <h2 class="section-title">Four years, one company, growing scope.</h2>
+
+        <div class="reveal">
+          <div class="job">
+            <div class="job-period">
+              <span class="current-dot"></span>Dec 2024 — Current
+            </div>
+            <div>
+              <div class="job-title">Senior Software Engineer</div>
+              <div class="job-company">
+                Leapfrog Technology, Inc. — Kathmandu, Nepal
+              </div>
+              <ul class="job-points">
+                <li>
+                  <strong>API development:</strong> Designing scalable RESTful
+                  and GraphQL (Apollo) APIs in Node.js and Express, integrated
+                  into the Microsoft Power Platform.
+                </li>
+                <li>
+                  <strong>Frontend:</strong> Building reusable React.js
+                  components and Power Apps Component Framework (PCF) controls.
+                </li>
+                <li>
+                  <strong>Power Platform delivery:</strong> End-to-end solutions
+                  across Canvas Apps, Model-Driven Apps, Power Automate, custom
+                  connectors, and .NET-based plugins.
+                </li>
+                <li>
+                  <strong>Architecture:</strong> Implementing
+                  Publisher–Subscriber and microservices patterns with Power
+                  Apps Service Endpoints and Azure Service Bus.
+                </li>
+                <li>
+                  <strong>Healthcare integration:</strong> Connecting state IIS
+                  systems (WAIIS, NJIIS) and billing systems, supporting X12
+                  transactions like 277 and 835.
+                </li>
+                <li>
+                  <strong>DevOps:</strong> Building CI/CD pipelines in GitHub
+                  Actions and Azure DevOps; supporting Kubernetes maintenance
+                  and deployment.
+                </li>
+                <li>
+                  <strong>Security:</strong> Maintaining Microsoft Entra ID
+                  auth, Power Apps security roles, and access controls.
+                </li>
+                <li>
+                  <strong>Mentorship:</strong> Guiding junior developers and
+                  contributing to architectural decision-making.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-period">Dec 2022 — Dec 2024</div>
+            <div>
+              <div class="job-title">Software Engineer</div>
+              <div class="job-company">
+                Leapfrog Technology Inc. — Kathmandu, Nepal
+              </div>
+              <p class="job-empty-points">
+                Promoted to Senior Software Engineer after two years of
+                delivering Power Platform and backend solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-period">Nov 2021 — Dec 2022</div>
+            <div>
+              <div class="job-title">Associate Software Engineer</div>
+              <div class="job-company">
+                Leapfrog Technology Inc. — Kathmandu, Nepal
+              </div>
+              <p class="job-empty-points">
+                Built foundational experience across the Power Platform and
+                Node.js stack before advancing to Software Engineer.
+              </p>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-period">Sep 2021 — Nov 2021</div>
+            <div>
+              <div class="job-title">Microsoft Power Platform Intern</div>
+              <div class="job-company">
+                Leapfrog Technology Inc. — Kathmandu, Nepal
+              </div>
+              <p class="job-empty-points">
+                Started here. Converted to a full-time Associate Software
+                Engineer role within two months.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="wrap">
+      <div class="trace-rail"></div>
+      <div class="node-dot"></div>
+      <div class="section-inner">
+        <div class="section-tag">03 / Projects</div>
+        <h2 class="section-title">Selected work.</h2>
+
+        <div class="project-grid reveal">
+          <div class="project-card">
+            <div class="project-index">Healthcare</div>
+            <div class="project-title">Signetic</div>
+            <p class="project-desc">
+              A healthcare platform for vaccination management, reporting, and
+              billing — built on Power Apps, Node.js, React, and Dynamics 365
+              CRM. Helped vaccinate one million people during the COVID-19
+              pandemic in Seattle.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Power Apps</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Dynamics 365</span>
+              <span class="tag">Azure</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-index">Internal Tools</div>
+            <div class="project-title">Quality Insights</div>
+            <p class="project-desc">
+              A centralized test results portal for QA, consolidating frontend
+              testing and Postman results into one dashboard. Built on AWS
+              Lambda with AWS QuickSight for visualization.
+            </p>
+            <div class="project-tags">
+              <span class="tag">AWS Lambda</span>
+              <span class="tag">QuickSight</span>
+              <span class="tag">QA Automation</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-index">Business Ops</div>
+            <div class="project-title">Restaurant Management</div>
+            <p class="project-desc">
+              An ordering and billing solution for restaurants, built with Power
+              Apps and Power Automate, with Power BI dashboards for reporting.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Power Apps</span>
+              <span class="tag">Power Automate</span>
+              <span class="tag">Power BI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION + EXTRACURRICULAR -->
+    <section id="education" class="wrap">
+      <div class="trace-rail"></div>
+      <div class="node-dot"></div>
+      <div class="section-inner">
+        <div class="section-tag">04 / Education & Community</div>
+        <h2 class="section-title">Background, and giving back.</h2>
+
+        <div class="two-col reveal">
+          <div>
+            <div class="stack-group-label" style="margin-bottom: 18px">
+              Education
+            </div>
+            <div class="edu-item">
+              <div class="edu-degree">B.E. Computer Science & Engineering</div>
+              <div class="edu-school">Nepal Engineering College, Nepal</div>
+              <div class="edu-date">Graduated January 2021</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-degree">+2 Science</div>
+              <div class="edu-school">SOS Hermann Gmeiner School, Nepal</div>
+              <div class="edu-date">Completed January 2016</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="stack-group-label" style="margin-bottom: 18px">
+              Extracurricular
+            </div>
+            <div class="activity-item">
+              <div class="activity-title">Power Apps Bootcamp</div>
+              <div class="activity-desc">
+                Actively promoting Power Apps adoption through community
+                bootcamps.
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-title">Leapfrog Hackathon — 2024</div>
+              <div class="activity-desc">
+                Built a centralized test results reporting system (Quality
+                Insights) using AWS services.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="wrap">
+      <div class="trace-rail"></div>
+      <div class="node-dot"></div>
+      <div class="section-inner">
+        <div class="section-tag">05 / Contact</div>
+        <div class="contact-panel reveal">
+          <h2>
+            Building something with healthcare systems, Power Platform, or
+            backend architecture? Let's talk.
+          </h2>
+          <p>
+            Open to senior backend, full-stack, and Power Platform engineering
+            opportunities — and always happy to discuss API design or healthcare
+            integration challenges.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:contactroshanstha@gmail.com" class="btn btn-primary"
+              >contactroshanstha@gmail.com</a
+            >
+            <a
+              href="https://linkedin.com/in/roshan-shrestha-0bb791188"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://github.com/lfroshan"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >GitHub ↗</a
+            >
+          </div>
+        </div>
+
+        <footer>
+          <span>© 2026 Roshan Shrestha</span>
+          <span>Myagde-1, Tanahun, Nepal · +977 9803580898</span>
+        </footer>
+      </div>
+    </section>
+
+    <script>
+      // mobile nav toggle
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        navToggle.classList.toggle("open", open);
+        navToggle.setAttribute("aria-expanded", open);
+      });
+      navLinks.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          navToggle.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", false);
+        }),
+      );
+
+      // scroll reveal
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      revealEls.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
