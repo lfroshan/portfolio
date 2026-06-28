@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Power Platform Meets Pro-Code Development</title>
 
@@ -17,69 +17,358 @@
           <a href="../index.html">Blogs</a>
         </div>
 
-        <h1 class="section-title">Power Platform Meets Pro-Code Development</h1>
+        <h1 class="section-title">
+          Power Platform Meets Pro-Code Development: Building Enterprise
+          Inventory & Ordering Systems
+        </h1>
+
+        <p class="blog-description">
+          Learn how Microsoft Power Platform can be combined with React,
+          Node.js, Azure Service Bus, Azure Functions, Kubernetes, Dataverse
+          Plugins, and Power Apps Component Framework (PCF) to build scalable
+          enterprise inventory management and ordering applications.
+        </p>
+        <div class="blog-meta">
+          <div class="blog-author">
+            <img
+              src="https://media.licdn.com/dms/image/v2/D5603AQHTj2CqYYP5kw/profile-displayphoto-crop_800_800/B56Z1MBkIkIMAI-/0/1775096982820?e=1784160000&v=beta&t=hQMkuQ6xEa_GXIFF0c7ir0nVquc-gVBKSbf_k_NvIVM"
+              alt="Roshan Shrestha"
+              class="author-avatar"
+            />
+
+            <div>
+              <p class="author-name">Roshan Shrestha</p>
+              <p class="author-info">
+                Senior Software Engineer • Published on June 28, 2026 • 8 min
+                read
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <article class="blog-content">
+        <img
+          src="../../assets/power-apps-pro-code.png"
+          alt="Enterprise Power Platform Architecture"
+          width="100%"
+        />
+
+        <h2>Introduction</h2>
+
         <p>
-          One of the biggest misconceptions about Microsoft Power Platform is
-          that it is only a low-code platform. Modern enterprise implementations
-          frequently require professional development practices, architecture
-          patterns, and cloud-native integrations.
+          Microsoft Power Platform is often viewed as a low-code platform used
+          to rapidly build business applications. While that perception is
+          partly correct, enterprise implementations rarely stop at low-code.
         </p>
 
-        <h2>Why Enterprises Still Need Professional Developers</h2>
-
         <p>
-          Low-code accelerates delivery, but enterprise applications still
-          require architecture design, security models, integrations,
-          performance tuning, DevOps practices, and governance.
+          Modern organizations require scalable architectures capable of
+          handling thousands of business transactions, integrating with external
+          ERP systems, supporting asynchronous processing, and delivering modern
+          user experiences.
         </p>
 
-        <h2>Where Low-Code Ends and Pro-Code Begins</h2>
+        <p>
+          In my projects, Power Platform acts as the business application layer,
+          while professional development extends its capabilities through
+          Dataverse Plugins, React-based PCF controls, Node.js microservices,
+          Azure Service Bus, Azure Functions, Azure App Services, and Azure
+          Kubernetes Service.
+        </p>
+
+        <p>
+          This article demonstrates how these technologies work together through
+          an Inventory Management and Ordering System.
+        </p>
+
+        <h2>Business Scenario</h2>
+
+        <img
+          src="../../assets/inventory-management-diagram.png"
+          alt="Inventory Management Application"
+          width="100%"
+        />
+
+        <p>
+          Consider a company operating multiple warehouses across different
+          regions.
+        </p>
+
+        <p>The organization requires:</p>
 
         <ul>
-          <li>Custom APIs</li>
-          <li>Azure Functions</li>
-          <li>Node.js Microservices</li>
-          <li>React Frontends</li>
-          <li>Power Apps Component Framework (PCF)</li>
-          <li>Dataverse Plugins</li>
+          <li>Inventory management</li>
+          <li>Purchase ordering</li>
+          <li>Warehouse management</li>
+          <li>Supplier management</li>
+          <li>Real-time stock tracking</li>
+          <li>Business analytics dashboards</li>
+          <li>Automatic reorder processing</li>
         </ul>
 
-        <h2>Modern Architecture Patterns</h2>
-
         <p>
-          Enterprise solutions commonly leverage publisher-subscriber patterns,
-          event-driven architecture, domain-driven design, and microservices.
+          While Power Apps can easily provide the user interface, enterprise
+          business processes require much more than CRUD operations.
         </p>
 
-        <h2>Azure Integration</h2>
+        <h2>Power Platform Components</h2>
+
+        <img
+          src="../../assets/power-apps-components.png"
+          alt="Power Platform Components"
+          width="100%"
+        />
+
+        <p>
+          The application is built using different Power Platform technologies,
+          each serving a dedicated responsibility.
+        </p>
+
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Technology</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Canvas App</td>
+              <td>Warehouse operations and inventory updates</td>
+            </tr>
+
+            <tr>
+              <td>Model-driven App</td>
+              <td>Administration and master data management</td>
+            </tr>
+
+            <tr>
+              <td>Dataverse</td>
+              <td>Central business database</td>
+            </tr>
+
+            <tr>
+              <td>Power Automate</td>
+              <td>Business approvals and notifications</td>
+            </tr>
+
+            <tr>
+              <td>Power BI</td>
+              <td>Executive dashboards and reporting</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Where Pro-Code Begins</h2>
+
+        <img
+          src="../../assets/pro-code-begins.png"
+          alt="Professional Development"
+          width="100%"
+        />
+
+        <p>
+          Enterprise applications often contain business logic that cannot be
+          implemented efficiently using low-code tools alone.
+        </p>
+
+        <p>In these scenarios, professional development becomes essential.</p>
 
         <ul>
-          <li>Azure Service Bus</li>
+          <li>Dataverse Plugins written in C#</li>
+          <li>React-based Power Apps Component Framework controls</li>
+          <li>Node.js microservices</li>
           <li>Azure Functions</li>
-          <li>Azure API Management</li>
-          <li>Azure Storage</li>
-          <li>Azure Event Grid</li>
           <li>Azure Kubernetes Service</li>
+          <li>REST APIs</li>
+          <li>External ERP integrations</li>
         </ul>
 
-        <h2>React, Node.js and PCF</h2>
+        <p>
+          Each technology complements Power Platform rather than replacing it.
+        </p>
+
+        <h2>Event-Driven Architecture</h2>
+
+        <img
+          src="../../assets/pub-sub-arch.png"
+          alt="Event Driven Architecture"
+          width="100%"
+        />
 
         <p>
-          Professional developers can build advanced user experiences using
-          React and TypeScript while integrating seamlessly with Dataverse
-          through Power Apps Component Framework controls.
+          Instead of directly calling backend APIs from Power Apps, every major
+          business event is published into Azure Service Bus through Dataverse
+          Service Endpoints.
         </p>
+
+        <pre>
+Inventory Updated
+
+↓
+
+Dataverse
+
+↓
+
+Plugin Validation
+
+↓
+
+Service Endpoint
+
+↓
+
+Azure Service Bus Topic
+
+↓
+
+Inventory Service
+
+↓
+
+Ordering Service
+
+↓
+
+Analytics Service
+
+↓
+
+Notification Service
+</pre
+        >
+
+        <p>
+          This Publisher-Subscriber architecture enables multiple independent
+          services to react to the same event without tight coupling.
+        </p>
+
+        <p>
+          New microservices can subscribe to existing business events without
+          any changes to the Power Apps application.
+        </p>
+
+        <h2>Inventory Processing Workflow</h2>
+
+        <ol>
+          <li>Warehouse operator receives products.</li>
+          <li>Inventory is updated through Canvas App.</li>
+          <li>Dataverse stores inventory transaction.</li>
+          <li>C# Plugin validates business rules.</li>
+          <li>Plugin publishes event using Service Endpoint.</li>
+          <li>Azure Service Bus receives the message.</li>
+          <li>Inventory Service updates warehouse stock.</li>
+          <li>Analytics Service updates reporting.</li>
+          <li>Notification Service alerts purchasing team.</li>
+          <li>Power BI dashboards refresh automatically.</li>
+        </ol>
+
+        <h2>React-Based PCF Controls</h2>
+
+        <img src="../../assets/pcf-sample.png" alt="React PCF" width="100%" />
+
+        <p>
+          Standard Model-driven forms provide powerful business capabilities but
+          are sometimes limited for highly interactive user experiences.
+        </p>
+
+        <p>
+          To overcome these limitations, custom Power Apps Component Framework
+          (PCF) controls can be built using React and TypeScript.
+        </p>
+
+        <p>Examples include:</p>
+
+        <ul>
+          <li>Interactive inventory grids</li>
+          <li>Product image galleries</li>
+          <li>Dynamic dashboards</li>
+          <li>Advanced validation components</li>
+          <li>Custom lookup controls</li>
+          <li>Modern responsive forms</li>
+        </ul>
+
+        <h2>Azure Microservices</h2>
+
+        <p>
+          Different backend services are hosted according to their processing
+          requirements.
+        </p>
+
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Azure Service</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Azure Functions</td>
+              <td>Event-driven processing</td>
+            </tr>
+
+            <tr>
+              <td>Azure App Service</td>
+              <td>REST APIs</td>
+            </tr>
+
+            <tr>
+              <td>Azure Kubernetes Service (AKS)</td>
+              <td>Large-scale microservices and container orchestration</td>
+            </tr>
+
+            <tr>
+              <td>Azure Service Bus</td>
+              <td>Reliable messaging with queues and topics</td>
+            </tr>
+
+            <tr>
+              <td>Azure Storage</td>
+              <td>Store documents, images, videos, and other files</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Benefits of Combining Low-Code and Pro-Code</h2>
+
+        <ul>
+          <li>Rapid application development</li>
+          <li>Scalable cloud-native architecture</li>
+          <li>Reusable microservices</li>
+          <li>Modern React user experiences</li>
+          <li>Reliable asynchronous processing</li>
+          <li>Independent deployment of services</li>
+          <li>Improved maintainability</li>
+          <li>Better fault tolerance using queues and topics</li>
+          <li>Enterprise-grade integrations</li>
+        </ul>
 
         <h2>Conclusion</h2>
 
         <p>
-          The future of enterprise software is not low-code versus pro-code. It
-          is low-code plus pro-code. Organizations that combine Power Platform
-          with modern engineering practices can achieve both speed and
-          scalability.
+          Microsoft Power Platform is far more than a low-code application
+          builder. When combined with professional software engineering
+          practices, it becomes a powerful enterprise application platform.
+        </p>
+
+        <p>
+          By integrating Dataverse Plugins, React-based PCF controls, Azure
+          Service Bus, Node.js microservices, Azure Functions, Azure App
+          Services, Kubernetes, and Power BI, organizations can deliver
+          responsive, scalable, and maintainable business applications while
+          preserving the rapid development capabilities of Power Platform.
+        </p>
+
+        <p>
+          Rather than choosing between low-code and pro-code, the most
+          successful enterprise solutions leverage the strengths of both
+          approaches to build modern, cloud-native systems that can evolve with
+          business needs.
         </p>
       </article>
     </section>
