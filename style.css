@@ -687,7 +687,7 @@ footer {
     gap: 0;
     padding: 8px 20px 20px;
     border-bottom: 1px solid var(--line);
-    transform: translateY(-110%);
+    transform: translateY(calc(-100% - 64px));
     transition: transform 0.3s ease;
     z-index: 60;
   }
